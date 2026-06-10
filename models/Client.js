@@ -8,10 +8,28 @@ const clientSchema = new mongoose.Schema(
       trim: true,
     },
 
-    nit: {
+    documentType: {
       type: String,
-      required: [true, "NIT is required"],
+      enum: ["NIT", "CC"],
+      required: [true, "Document type is required"],
+    },
+
+    documentNumber: {
+      type: String,
+      required: [true, "Document number is required"],
       unique: true,
+      trim: true,
+    },
+
+    address: {
+      type: String,
+      required: [true, "Address is required"],
+      trim: true,
+    },
+
+    companyPhone: {
+      type: String,
+      required: [true, "Company phone is required"],
       trim: true,
     },
 
@@ -21,21 +39,16 @@ const clientSchema = new mongoose.Schema(
       trim: true,
     },
 
-    phone: {
+    contactEmail: {
       type: String,
-      required: [true, "Phone number is required"],
-      trim: true,
-    },
-
-    email: {
-      type: String,
-      required: [true, "Email is required"],
-      trim: true,
+      required: [true, "Contact email is required"],
       lowercase: true,
+      trim: true,
     },
 
-    address: {
+    contactPhone: {
       type: String,
+      required: [true, "Contact phone is required"],
       trim: true,
     },
 
