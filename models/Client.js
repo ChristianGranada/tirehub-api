@@ -2,6 +2,12 @@ const mongoose = require("mongoose");
 
 const clientSchema = new mongoose.Schema(
   {
+    company: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Company",
+      required: true,
+    },
+
     companyName: {
       type: String,
       required: [true, "Company name is required"],

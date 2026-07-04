@@ -1,0 +1,14 @@
+module.exports = [
+  "INITIAL_INSPECTION",
+  "BUFFING",
+  "CARDEO",
+  "REPAIR",
+  "CEMENTING",
+  "TREAD_CUTTING",
+  "FILLING",
+  "BUILDING",
+  "ASSEMBLY",
+  "CURING",
+  "FINAL_INSPECTION",
+  "STORAGE",
+];

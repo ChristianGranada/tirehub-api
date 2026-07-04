@@ -1,8 +1,15 @@
 const mongoose = require("mongoose");
 const bcrypt = require("bcryptjs");
+const ROLES = require("../config/roles");
 
 const userSchema = new mongoose.Schema(
   {
+    company: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Company",
+      required: true,
+    },
+
     nombre: {
       type: String,
       required: true,
@@ -25,16 +32,7 @@ const userSchema = new mongoose.Schema(
 
     rol: {
       type: String,
-      enum: [
-        "ADMIN",
-        "FINANCE_MANAGER",
-        "PLANT_MANAGER",
-        "LOGISTICS_MANAGER",
-        "PLANT_OPERATOR",
-        "SALES_MANAGER",
-        "SALES_REPRESENTATIVE",
-        "LOGISTICS_OPERATOR",
-      ],
+      enum: ROLES,
       required: true,
     },
 
